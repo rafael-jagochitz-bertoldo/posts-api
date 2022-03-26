@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "ts-node-dev src/server.ts",
+    "build": "prisma generate",
+    "start": "node src/index.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
