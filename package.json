@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "build": "tsc && prisma migrate deploy",
+    "build": "tsc && prisma generate",
     "start": "node build/index.js"
   },
   "devDependencies": {
