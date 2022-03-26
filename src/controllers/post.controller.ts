@@ -89,7 +89,7 @@ export const updatePost = async (
       throw new AppError("invalid fields, please inform title or body");
     }
 
-    const checkPost = await prisma.post.findUnique({ where: { title } });
+    const checkPost = await prisma.post.findUnique({ where: { id } });
 
     if (!checkPost) {
       throw new AppError("post not found", 404);
