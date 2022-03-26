@@ -95,10 +95,22 @@ export const updatePost = async (
       throw new AppError("post not found", 404);
     }
 
-    if (checkPost.title === title || checkPost.body === body) {
+    if (checkPost.title === title && checkPost.body === body) {
       return res
         .status(400)
         .send({ message: `can't update with the values is the same` });
+    }
+
+    if (checkPost.title === title) {
+      return res
+        .status(400)
+        .send({ message: `can't update with the title value is the same` });
+    }
+
+    if (checkPost.body === body) {
+      return res
+        .status(400)
+        .send({ message: `can't update with the body value is the same` });
     }
 
     const post = await prisma.post.update({
